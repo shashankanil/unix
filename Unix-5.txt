@@ -1,0 +1,46 @@
+5. Write a shell script to find maximum and minimum of given set.
+
+Program:
+
+clear
+echo "Enter how many numbers"
+read n
+i=1
+while [ $i -le $n ]
+do
+	echo "Enter the numbers"
+	read m
+	if [ $i -eq 1 ]
+	then
+		max=$m
+		min=$m
+	fi
+	if [ $m -gt $max ]
+	then
+		max=$m
+	fi
+	if [ $m -lt $min ]
+	then
+		min=$m
+	fi
+	i=`expr $i + 1`
+done
+echo "Maximum number of the given set is $max"
+echo "Minimum number of the given set is $min"
+
+Output:
+
+	Enter how many numbers 
+	5
+	Enter the numbers
+	56
+	Enter the numbers
+	65
+	Enter the numbers
+	89
+	Enter the numbers
+	45
+	Enter the numbers
+	65
+	Maximum number of the given set is 89
+	Minimum number of the given set is 45

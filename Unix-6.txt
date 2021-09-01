@@ -1,0 +1,33 @@
+6. Write a shell script to reverse a given string and check whether it is palindrome or not.
+
+Program:
+
+clear
+echo "Enter a string"
+read str
+len=`expr length $str`
+rev=""
+while [ $len -ge 1 ]
+do
+	ch=`echo $str|cut -c $len`
+	rev=$rev$ch
+	len=`expr $len - 1`
+done
+echo "String Reversed is $rev"
+if [ $str = $rev ]
+then
+	echo "It is palindrome"
+else
+	echo "It is not palindrome"
+fi
+
+Output:
+	Enter a string
+	malayalam
+	String Reversed is malayalam
+	It is palindrome
+	
+	Enter a string
+	hiworld
+	String Reversed is dlrowih
+	It is not palindrome

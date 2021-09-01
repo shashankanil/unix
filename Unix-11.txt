@@ -1,0 +1,22 @@
+Program 11
+
+clear
+echo Enter a string:
+read str
+t=0
+for fname in *
+do
+        if [ -f $fname ]
+        then
+                if [ `grep -c $str $fname` -gt 0 ]
+                then
+                        t=`expr $t + 1`
+                        echo $t.$fname
+                fi
+        fi
+done
+
+      if [ $t -eq 0 ]
+      then
+        echo "Given $str pattern does not exist in current directory"
+fi

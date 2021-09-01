@@ -1,0 +1,21 @@
+Program-12
+echo Enter the string:
+read str
+echo enter a search character:
+read s
+count=0
+len=`expr length $str`
+while [ $len -ne 0 ]
+do
+        ch=`echo $str | cut -c $len`
+        if [ $ch = $s ]
+        then
+                count=`expr $count + 1`
+        fi
+        len=`expr $len - 1`
+done
+echo Number of $s in $str are $count.
+if [ $count -eq 0 ]
+then
+        echo No such character in a string.
+fi

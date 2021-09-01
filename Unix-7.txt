@@ -1,0 +1,32 @@
+7. Write a shell script to count number of vowels in a given string.
+
+Program:
+
+clear
+echo "Enter a string"
+read str
+len=`expr length $str`
+vc=0
+oc=0
+while [ $len -gt 0 ]
+do
+	ch=`echo $str|cut -c $len`
+	case $ch in
+		[aeiouAEIOU])
+		vc=`expr $vc + 1`
+		;;
+		*)
+		oc=`expr $oc + 1`
+		;;
+	esac
+	len=`expr $len - 1`
+done
+echo "The number of vowels in the string are $vc"
+echo "The number of other characters in the string are $oc"
+
+Output:
+	Enter a string
+	universe
+	The number of vowels in the string are 4
+	The number of ither characters in the string are 4
+

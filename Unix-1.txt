@@ -1,0 +1,44 @@
+1. Write a shell script to find largest of 3 numbers using nested if.
+
+	Program:
+
+	clear
+	echo "enter three numbers"
+	read a
+	read b
+	read c 
+	if [ $a -gt $b ]
+	then
+		if [ $a -gt $c ]
+		then
+			echo big=$a
+		else
+			echo big=$c
+		fi
+		else
+			if [ $b -gt $c ]
+			then
+				echo big=$b
+			else		
+				echo big=$c
+			fi
+	fi
+
+Output:
+	Enter three numbers
+
+	20  
+	30
+	40
+	Largest=40
+
+	Enter three numbers
+	40
+	30
+	20
+	Largest=40
+	Enter three numbers
+	30
+	40
+	20
+	Largest=40

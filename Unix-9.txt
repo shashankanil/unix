@@ -1,0 +1,39 @@
+//Program-9
+//Write a shell script to establish communication between parent and child process using fork()
+ system call.
+
+#include<stdio.h>
+#include<unistd.h>
+#include<sys/types.h>
+#define max 5
+
+void childprocess();
+void parentprocess();
+void main()
+{
+        pid_t pid;
+        pid=fork();
+        if ( pid==0 )
+                childprocess();
+        else
+                parentprocess();
+}
+
+void childprocess()
+{
+        int i;
+        for (i=1;i<=max;i++)
+                printf("This line is from child, Value=%d \n",i);
+        printf("Process id is %d \n",getpid());
+        printf("Parent process id is %d \n", getpid());
+        printf("--------------END OF CHILD PROCESS-------------------------");
+}
+void parentprocess()
+{
+        int i;
+for (i=1;i<=max;i++)
+                printf("This line is from Parent Process, Value= %d \n", i);
+        printf("Process id is %d \n", getpid());
+        printf("--------------------END OF PARENT PROCESS----------------------");
+}
+

@@ -1,0 +1,33 @@
+3. Write a shell script to reverse a given number and check whether it is palindrome or not.
+
+Program:
+
+clear
+echo "Enter a number"
+read n
+m=$n
+rev=0
+while [ $n -gt 0 ]
+do
+	rem=`expr $n % 10`
+	rev=`expr $rev \* 10 + $rem`
+	n=`expr $n / 10`
+done
+echo "Reverse of the $m is $rev"
+if [ $m -eq $rev ]
+then
+	echo "$m is palindrome"
+else
+	echo "$m is not a palindrome"
+fi
+
+Output:
+	Enter a number
+	121
+	Reverse of the 121 is 121
+	121 is palindrome
+	
+	Enter a number
+	456
+	Reverse of the 456 is 654
+	456 is not a palindrome

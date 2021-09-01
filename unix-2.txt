@@ -1,0 +1,44 @@
+2. Write a shell script to calculate factorial of ‘n’ numbers.
+
+Program:
+
+clear
+echo "Enter how many numbers"
+read n
+i=1
+while [ $i -le $n ]
+do 
+	fact=1
+	x=1
+	echo "Enter the number to find the factorial"
+	read m
+	while [ $x -le $m ]
+	do 
+		fact=`expr $fact \* $x`
+		x=`expr $x + 1`
+	done
+	echo "Factorial of $m is $fact"
+	i=`expr $i + 1`
+done
+
+Output:
+	Enter how many numbers
+	4
+	Enter the number to find the factorial
+	6
+	Factorial of 6 is 720
+	Enter the number to find the factorial
+	5
+	Factorial of 5 is 120
+	Enter the number to find the factorial
+	4
+	Factorial of 4 is 24
+	Enter the number to find the factorial
+	3
+	Factorial of 3 is 6
+
+
+
+
+
+

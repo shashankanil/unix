@@ -1,0 +1,40 @@
+4. Write a shell script to print prime numbers between m and n where m<n.
+
+Program:
+
+	clear
+	echo "Enter two numbers"
+	read m n
+	echo "Prime Numbers between $m and $n are"
+	while [ $m -le $n ]
+	do 
+		prime=1
+		d=`expr $m / 2`
+		a=2
+		while [ $a -le $d ]
+		do
+			c=`expr $m % $a`
+			if [ $c -eq 0 ]
+			then
+				prime=0
+				break
+			fi
+		a=`expr $a + 1`
+		done
+		if [ $prime -eq 1 ]
+		then
+			echo "$m"
+		fi
+	m=`expr $m + 1`
+	done 
+
+Output:
+	
+	Enter two numbers
+	10 25
+	Prime Numbers between 10 and 25 are
+	11
+	13
+	17
+	19
+	23
